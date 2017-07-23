@@ -1,0 +1,23 @@
+{
+  "name": "notcatbot",
+  "version": "1.0.0",
+  "description": "Not a cat bot for telegram",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-c-levin/notcatbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/j-c-levin/notcatbot/issues"
+  },
+  "homepage": "https://github.com/j-c-levin/notcatbot#readme",
+  "dependencies": {
+    "serverless-google-cloudfunctions": "^1.1.1"
+  }
+}
