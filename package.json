@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/j-c-levin/notcatbot#readme",
   "dependencies": {
-    "serverless-google-cloudfunctions": "^1.1.1"
+    "dotenv": "^4.0.0",
+    "nodemon": "^1.11.0",
+    "serverless-google-cloudfunctions": "^1.1.1",
+    "telegraf": "^3.9.0"
   }
 }
