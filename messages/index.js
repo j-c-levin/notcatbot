@@ -26,8 +26,7 @@ bot.dialog('cat', function (session) {
     var message = new builder.Message(session)
         .addAttachment({
             contentUrl: 'http://i.imgur.com/yQQSiHB.jpg',
-            contentType: 'image/png',
-            name: 'not a cat'
+            contentType: 'image/png'
         });
     session.endConversation(message);
 })
