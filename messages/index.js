@@ -15,8 +15,18 @@ var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure
 var bot = new builder.UniversalBot(connector);
 bot.localePath(path.join(__dirname, './locale'));
 
-bot.dialog('/', function (session) {
-    session.send('Say what? ' + session.message.text);
+bot.dialog('/start', function (session) {
+    session.send('Started');
+});
+
+bot.dialog('/cat', function (session) {
+    var message = new builder.Message(session)
+        .addAttachment({
+            contentUrl: 'http://i.imgur.com/yQQSiHB.jpg',
+            contentType: 'image/png',
+            name: 'not a cat'
+        });
+    session.send(message);
 });
 
 if (useEmulator) {
