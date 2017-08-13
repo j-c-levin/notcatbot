@@ -35,6 +35,7 @@ bot.command('/cat', (ctx) => {
     const dogPhotoUrl = getDogPhoto();
     ctx.replyWithPhoto({ url: dogPhotoUrl });
 });
-bot.telegram.setWebhook(`${process.env.WEBHOOK_ADDRESS}/${process.env.BOT_TOKEN}`);
-bot.startWebhook(`/${process.env.BOT_TOKEN}`, null, 3000);
+// bot.telegram.setWebhook(`${process.env.WEBHOOK_ADDRESS}/${process.env.BOT_TOKEN}`);
+// bot.startWebhook(`/${process.env.BOT_TOKEN}`, null, 3000);
+bot.startPolling();
 console.log('webhook set: ' + `${process.env.WEBHOOK_ADDRESS}/${process.env.BOT_TOKEN}`);
