@@ -1,5 +1,6 @@
 'use strict';
 require('dotenv').config();
+console.log("token: " + process.env.BOT_TOKEN);
 const fs = require('fs');
 const path = require('path');
 const dogData = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'dogs.json'), 'utf-8'));
