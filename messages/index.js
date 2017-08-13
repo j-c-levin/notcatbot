@@ -35,9 +35,9 @@ bot.dialog('cat', function (session) {
         matches: /^\/cat$/i
     });
 
-// bot.dialog('/', function (session) {
-//     // do nothing
-// });
+bot.dialog('/', function (session) {
+    // do nothing
+});
 
 if (useEmulator) {
     var restify = require('restify');
