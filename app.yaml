@@ -1,0 +1,9 @@
+env: flex
+runtime: nodejs
+manual_scaling:
+  instances: 1
+env_variables:
+  WEBHOOK_ADDRESS: 'https://notcatbot.appspot.com'
+network:
+  forwarded_ports:
+    - 3000

@@ -4,13 +4,10 @@
   "description": "Not a cat bot for telegram",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
+    "start": "node index.js"
   },
-  "now": {
-    "public": true,
-    "dotenv": true,
-    "type": "npm"
+  "engines": {
+    "node": "8.x"
   },
   "repository": {
     "type": "git",
@@ -25,6 +22,7 @@
   "homepage": "https://github.com/j-c-levin/notcatbot#readme",
   "dependencies": {
     "dotenv": "^4.0.0",
+    "pm2": "^2.6.1",
     "telegraf": "^3.9.0"
   }
 }
