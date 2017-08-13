@@ -30,12 +30,11 @@ bot.command('/start', (ctx) => {
     console.log('received start command');
     ctx.reply('Started') 
 });
+
 bot.command('/cat', (ctx) => {
     console.log('received cat command');
     const dogPhotoUrl = getDogPhoto();
     ctx.replyWithPhoto({ url: dogPhotoUrl });
 });
-// bot.telegram.setWebhook(`${process.env.WEBHOOK_ADDRESS}/${process.env.BOT_TOKEN}`);
-// bot.startWebhook(`/${process.env.BOT_TOKEN}`, null, 3000);
+
 bot.startPolling();
-console.log('webhook set: ' + `${process.env.WEBHOOK_ADDRESS}/${process.env.BOT_TOKEN}`);
