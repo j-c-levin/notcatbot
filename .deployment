@@ -1,3 +1,0 @@
-[config]
-command = npm install pm2 -g
-command = pm2 start index.js -i 0
