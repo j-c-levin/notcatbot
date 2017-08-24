@@ -1,7 +1,7 @@
 {
   "name": "emptybot",
   "version": "1.0.0",
-  "description": "",
+  "description": "not a cat bot",
   "main": "index.js",
   "dependencies": {
     "botbuilder": "^3.7.0",
