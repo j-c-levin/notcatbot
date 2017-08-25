@@ -2,7 +2,7 @@
 var builder = require("botbuilder");
 var botbuilder_azure = require("botbuilder-azure");
 var path = require('path');
-const dogImages = require('./dogs');
+const messageBuilder = require('./messageBuilder');
 
 var useEmulator = (process.env.NODE_ENV == 'development');
 
@@ -24,12 +24,7 @@ bot.dialog('/start', function (session) {
     });
 
 bot.dialog('cat', function (session) {
-    const dogImage = dogImages.getDogPhoto();
-    var message = new builder.Message(session)
-        .addAttachment({
-            contentUrl: dogImage,
-            contentType: 'image/png'
-        });
+    const message = messageBuilder.createMessage(session);
     session.endConversation(message);
 })
     .triggerAction({

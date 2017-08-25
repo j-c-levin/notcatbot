@@ -9,9 +9,8 @@ function getRandomInt(min, max) {
 }
 
 module.exports = {
-    getDogPhoto : () => {
+    getDogPhoto: (index) => {
         const imageNumber = getRandomInt(0, imageData.length - 1);
-        console.log('number: ' + imageNumber + ' link: ' + imageData[imageNumber].link);
         return imageData[imageNumber].link;
     }
 }
