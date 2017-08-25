@@ -47,7 +47,7 @@ module.exports = {
     createMessage: (session) => {
         const messageChoice = getRandomInt(0, 10);
         // 20% probability of sending a message
-        if (messageChoice <= 3) {
+        if (messageChoice <= 2) {
             const index = getRandomInt(0, messageArray.length - 1);
             return messageArray[index];
         } else {
