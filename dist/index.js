@@ -18,8 +18,8 @@ function init() {
         const bot = new telegraf(process.env.BOT_TOKEN);
         let url = (typeof process.env.DEVELOPMENT !== 'undefined') ? yield ngrok.connect(80) : process.env.URL;
         setupHandlers(bot);
-        bot.telegram.setWebhook(url + "/secret");
-        bot.startWebhook("/secret", null, process.env.PORT);
+        bot.telegram.setWebhook(url + process.env.SECRET_URL);
+        bot.startWebhook(process.env.SECRET_URL, null, process.env.PORT);
         console.log("bot running");
     });
 }
