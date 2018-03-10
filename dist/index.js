@@ -19,7 +19,7 @@ function init() {
         let url = (typeof process.env.DEVELOPMENT !== 'undefined') ? yield ngrok.connect(80) : process.env.URL;
         setupHandlers(bot);
         bot.telegram.setWebhook(url + "/secret");
-        bot.startWebhook("/secret", null, process.env.URL_PORT);
+        bot.startWebhook("/secret", null, process.env.PORT);
         console.log("bot running");
     });
 }
