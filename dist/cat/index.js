@@ -22,14 +22,11 @@ exports.CatResponse = {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const image = yield dog_1.getDogImage();
-                // const response = {
-                //   url: image,
-                //   filename: 'hello'
-                // };
                 ctx.replyWithPhoto(image);
             }
             catch (e) {
                 console.error(`Error getting dog image`);
+                ctx.reply("Couldn't find any cats. *shrug*");
             }
         });
     }

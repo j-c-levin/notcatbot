@@ -13,13 +13,10 @@ export const CatResponse = {
   cat: async function(ctx) {
     try {
       const image = await getDogImage();
-      // const response = {
-      //   url: image,
-      //   filename: 'hello'
-      // };
       ctx.replyWithPhoto(image);
     } catch (e) {
       console.error(`Error getting dog image`);
+      ctx.reply("Couldn't find any cats. *shrug*");
     }
   }
 };
