@@ -23,6 +23,7 @@ exports.CatResponse = {
             try {
                 const image = yield dog_1.getDogImage();
                 ctx.replyWithPhoto(image);
+                ctx.reply(getSarcasticReply());
             }
             catch (e) {
                 console.error(`Error getting dog image`);

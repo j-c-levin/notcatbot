@@ -14,6 +14,7 @@ export const CatResponse = {
     try {
       const image = await getDogImage();
       ctx.replyWithPhoto(image);
+      ctx.reply(getSarcasticReply());
     } catch (e) {
       console.error(`Error getting dog image`);
       ctx.reply("Couldn't find any cats. *shrug*");
