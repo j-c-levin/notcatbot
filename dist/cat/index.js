@@ -8,9 +8,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const dog_1 = require("./dog");
+const dogApi_1 = require("./dogApi");
 function getSarcasticReply() {
-    const replies = ["No cats today, how about a dog?"];
+    const replies = [
+        "No cats today, how about a dog?",
+        "Ran out of cats, sorry.",
+        "Just a sec, just a sec, check out this dog pic I found",
+        "Dammit man, we don't need any more cats!",
+        "Full power to MOAR DOGGIES!!",
+        "Cannot comply with that order sir!",
+        "But...but...but what about this good boy?",
+        "I found a cat online but guess I got catfished."
+    ];
     const index = Math.floor(Math.random() * replies.length);
     return replies[index];
 }
@@ -21,7 +30,7 @@ exports.CatResponse = {
     cat: function (ctx) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const image = yield dog_1.getDogImage();
+                const image = yield dogApi_1.getDogImage();
                 ctx.replyWithPhoto(image);
                 ctx.reply(getSarcasticReply());
             }

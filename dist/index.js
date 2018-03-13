@@ -11,7 +11,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const telegraf = require("telegraf");
 const ngrok = require("ngrok");
 const dotenv = require("dotenv");
-const index_1 = require("./cat/index");
+const cat_1 = require("./cat");
+const help_1 = require("./help");
+const hug_1 = require("./hug");
+const horoscope_1 = require("./horoscope");
+const left_chat_event_1 = require("./left_chat_event");
+const index_1 = require("./shrug/index");
+const index_2 = require("./flip/index");
+const index_3 = require("./pat/index");
+const index_4 = require("./pig/index");
+const index_5 = require("./slap/index");
 dotenv.config();
 function init() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -28,7 +37,16 @@ function init() {
     });
 }
 function setupHandlers(bot) {
-    index_1.CatResponse.setupHandlers(bot);
+    cat_1.CatResponse.setupHandlers(bot);
+    help_1.HelpResponse.setupHandlers(bot);
+    horoscope_1.HoroscopeResponse.setupHandlers(bot);
+    hug_1.HugResponse.setupHandlers(bot);
+    left_chat_event_1.LeftChatEventResponse.setupHandlers(bot);
+    index_1.ShrugResponse.setupHandlers(bot);
+    index_2.FlipResponse.setupHandlers(bot);
+    index_3.PatResponse.setupHandlers(bot);
+    index_4.PigResponse.setupHandlers(bot);
+    index_5.SlapResponse.setupHandlers(bot);
 }
 init();
 //# sourceMappingURL=index.js.map
