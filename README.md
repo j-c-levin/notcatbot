@@ -1,5 +1,5 @@
 # Not-Cat-Bot
-Making a telegam bot that is definitely not a cat
+Making a telegam bot that is definitely not a cat.  This is an april fools in-joke for the dollars chat group on telegram.
 
 |Master   |Develop   |
 |---|---|
