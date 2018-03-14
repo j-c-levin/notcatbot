@@ -24,7 +24,7 @@ SECRET_PATH=[some random string]
 ```
 
 ## Run
-1) Run npm start
+1) Run `npm start`
 2) Beging chatting to your chatbot on telegram
 
 ## Testing
