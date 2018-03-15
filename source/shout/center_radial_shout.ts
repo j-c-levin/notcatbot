@@ -1,5 +1,7 @@
 import { gridSize } from "./index";
 
+// needs to be re-worked so that it all radiates out from the center
+
 export function centerRadialShout(input: string, ctx: any) {
   let response = "";
   input = input.trim().toUpperCase().replace(" ", "");

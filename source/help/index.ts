@@ -14,7 +14,8 @@ export const HelpResponse = {
         /flip - get that anger out of you!
         /pat - they tried, they really did.
         /pig - it's a thing.
-        /shout - be heard LOUDLY!`;
+        /shout - be heard LOUDLY!
+        ****** - ??????`;
     ctx.reply(helpText);
   }
 };

@@ -18,7 +18,9 @@ export const PatResponse = {
       `I feel a little bad for ${receiver}`,
       `If I had an award for pity I'd give it to ${receiver}`,
       `${receiver} took second place in the pity olympics, but only because the judges felt guilty`,
-      `${receiver}...not having a good day`
+      `${receiver}...not having a good day`,
+      `There there ${receiver}, there there...`,
+      `I'm a little disappointed ${receiver}, not going to lie...`
     ];
     const index = Math.floor(Math.random() * replies.length);
     ctx.reply(replies[index]);

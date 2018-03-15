@@ -31,7 +31,9 @@ exports.HugResponse = {
             `${sender} bought ${receiver} something tasty`,
             `${sender} let ${receiver} listen to their favourite song five times back to back`,
             `${sender} phoned ${receiver} and chatted about life`,
-            `${sender} brought ${receiver} a good cup of tea`
+            `${sender} brought ${receiver} a good cup of tea`,
+            `${sender} reminded ${receiver} that it was not all bad`,
+            `${sender} sat through a bad film that ${receiver} wanted to watch`
         ];
         const index = Math.floor(Math.random() * replies.length);
         ctx.reply(replies[index]);
