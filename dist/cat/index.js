@@ -23,22 +23,22 @@ function getSarcasticReply() {
     const index = Math.floor(Math.random() * replies.length);
     return replies[index];
 }
+function cat(ctx) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const image = yield dogApi_1.getDogImage();
+            ctx.replyWithPhoto(image);
+            ctx.reply(getSarcasticReply());
+        }
+        catch (e) {
+            console.error(`Error getting dog image`);
+            ctx.reply("Couldn't find any cats. *shrug*");
+        }
+    });
+}
 exports.CatResponse = {
     setupHandlers: function (bot) {
-        bot.hears("/cat", this.cat);
-    },
-    cat: function (ctx) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const image = yield dogApi_1.getDogImage();
-                ctx.replyWithPhoto(image);
-                ctx.reply(getSarcasticReply());
-            }
-            catch (e) {
-                console.error(`Error getting dog image`);
-                ctx.reply("Couldn't find any cats. *shrug*");
-            }
-        });
+        bot.hears("/cat", cat);
     }
 };
 //# sourceMappingURL=index.js.map

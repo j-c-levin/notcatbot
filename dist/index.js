@@ -21,13 +21,15 @@ const index_2 = require("./flip/index");
 const index_3 = require("./pat/index");
 const index_4 = require("./pig/index");
 const index_5 = require("./slap/index");
+const index_6 = require("./shout/index");
 dotenv.config();
 function init() {
     return __awaiter(this, void 0, void 0, function* () {
         // Initialise the bot
         const bot = new telegraf(process.env.BOT_TOKEN);
+        bot.telegram.getMe().then((botInfo) => { bot.options.username = 'testnotcatbot'; });
         // Start ngrok if not deployed
-        let url = (typeof process.env.DEVELOPMENT !== 'undefined') ? yield ngrok.connect(80) : process.env.URL;
+        const url = (typeof process.env.DEVELOPMENT !== 'undefined') ? yield ngrok.connect(80) : process.env.URL;
         // Set up the commands the bot will respond too
         setupHandlers(bot);
         // Set up and start the webhook
@@ -47,6 +49,7 @@ function setupHandlers(bot) {
     index_3.PatResponse.setupHandlers(bot);
     index_4.PigResponse.setupHandlers(bot);
     index_5.SlapResponse.setupHandlers(bot);
+    index_6.ShoutResponse.setupHandlers(bot);
 }
 init();
 //# sourceMappingURL=index.js.map

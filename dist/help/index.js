@@ -2,7 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HelpResponse = {
     setupHandlers: function (bot) {
-        bot.hears("/help", this.help);
+        bot.command("/help", this.help);
+        bot.start(this.help);
     },
     help: function (ctx) {
         const helpText = `
@@ -14,7 +15,8 @@ exports.HelpResponse = {
         /shrug - it's like a hug but with a few more letters.
         /flip - get that anger out of you!
         /pat - they tried, they really did.
-        /pig - it's a thing.`;
+        /pig - it's a thing.
+        /shout - be heard LOUDLY!`;
         ctx.reply(helpText);
     }
 };

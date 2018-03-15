@@ -15,18 +15,19 @@ function getSarcasticReply(): string {
   return replies[index];
 }
 
+async function cat(ctx) {
+  try {
+    const image = await getDogImage();
+    ctx.replyWithPhoto(image);
+    ctx.reply(getSarcasticReply());
+  } catch (e) {
+    console.error(`Error getting dog image`);
+    ctx.reply("Couldn't find any cats. *shrug*");
+  }
+}
+
 export const CatResponse = {
   setupHandlers: function(bot: any) {
-    bot.hears("/cat", this.cat);
-  },
-  cat: async function(ctx) {
-    try {
-      const image = await getDogImage();
-      ctx.replyWithPhoto(image);
-      ctx.reply(getSarcasticReply());
-    } catch (e) {
-      console.error(`Error getting dog image`);
-      ctx.reply("Couldn't find any cats. *shrug*");
-    }
+    bot.hears("/cat", cat);
   }
 };
