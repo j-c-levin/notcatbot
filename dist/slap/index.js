@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SlapResponse = {
     setupHandlers: function (bot) {
-        bot.hears("/slap", this.default);
+        bot.command("/slap", this.default);
     },
     default: function (ctx) {
         const sender = ctx.from.username;

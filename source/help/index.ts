@@ -1,8 +1,9 @@
 export const HelpResponse = {
-  setupHandlers: function(bot: any) {
-    bot.hears("/help", this.help);
+  setupHandlers: function (bot: any) {
+    bot.command("/help", this.help);
+    bot.start(this.help);
   },
-  help: function(ctx) {
+  help: function (ctx) {
     const helpText = `
         I'm so very talented, sometimes I even impress myself:
         /cat - might show you a cat photo, don't count on it though.
@@ -12,7 +13,8 @@ export const HelpResponse = {
         /shrug - it's like a hug but with a few more letters.
         /flip - get that anger out of you!
         /pat - they tried, they really did.
-        /pig - it's a thing.`;
+        /pig - it's a thing.
+        /shout - be heard LOUDLY!`;
     ctx.reply(helpText);
   }
 };

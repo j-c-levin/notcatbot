@@ -11,13 +11,15 @@ import { FlipResponse } from './flip/index';
 import { PatResponse } from './pat/index';
 import { PigResponse } from './pig/index';
 import { SlapResponse } from './slap/index';
+import { ShoutResponse } from './shout/index';
 dotenv.config();
 
 async function init() {
   // Initialise the bot
   const bot = new telegraf(process.env.BOT_TOKEN);
+  bot.telegram.getMe().then((botInfo) => { bot.options.username = 'testnotcatbot'; });
   // Start ngrok if not deployed
-  let url = (typeof process.env.DEVELOPMENT !== 'undefined') ? await ngrok.connect(80) : process.env.URL ;
+  const url = (typeof process.env.DEVELOPMENT !== 'undefined') ? await ngrok.connect(80) : process.env.URL;
   // Set up the commands the bot will respond too
   setupHandlers(bot);
   // Set up and start the webhook
@@ -37,6 +39,7 @@ function setupHandlers(bot: any): void {
   PatResponse.setupHandlers(bot);
   PigResponse.setupHandlers(bot);
   SlapResponse.setupHandlers(bot);
+  ShoutResponse.setupHandlers(bot);
 }
 
 init();
