@@ -1,5 +1,5 @@
 {
-  "name": "algorithm-practice",
+  "name": "not-cat-bot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,7 +20,6 @@
     "tslint": "^5.9.1"
   },
   "dependencies": {
-    "express": "^4.16.2",
     "superagent": "^3.8.2",
     "telegraf": "^3.19.0",
     "typescript": "^2.7.2"

@@ -22,12 +22,13 @@ const index_3 = require("./pat/index");
 const index_4 = require("./pig/index");
 const index_5 = require("./slap/index");
 const index_6 = require("./shout/index");
+const index_7 = require("./joshie/index");
 dotenv.config();
 function init() {
     return __awaiter(this, void 0, void 0, function* () {
         // Initialise the bot
         const bot = new telegraf(process.env.BOT_TOKEN);
-        bot.telegram.getMe().then((botInfo) => { bot.options.username = 'testnotcatbot'; });
+        bot.telegram.getMe().then((botInfo) => { bot.options.username = process.env.BOT_NAME; });
         // Start ngrok if not deployed
         const url = (typeof process.env.DEVELOPMENT !== 'undefined') ? yield ngrok.connect(80) : process.env.URL;
         // Set up the commands the bot will respond too
@@ -50,6 +51,7 @@ function setupHandlers(bot) {
     index_4.PigResponse.setupHandlers(bot);
     index_5.SlapResponse.setupHandlers(bot);
     index_6.ShoutResponse.setupHandlers(bot);
+    index_7.JoshieResponse.setupHandlers(bot);
 }
 init();
 //# sourceMappingURL=index.js.map

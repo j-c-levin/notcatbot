@@ -21,6 +21,7 @@ DEVELOPMENT=true
 BOT_TOKEN=[your bot token from telegram's botfather]
 PORT=80
 SECRET_PATH=[some random string]
+BOT_NAME=[the username of your bot on telegram]
 ```
 
 ## Run

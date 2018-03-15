@@ -3,8 +3,17 @@
   "description": "A dollars-chat themed chatbot for telegram",
   "repository": "https://github.com/j-c-levin/notcatbot",
   "logo": "http://dollars-bbs.org/images/dollars_logo.jpg",
-  "keywords": ["node", "express", "telegram", "bot"],
-  "buildpacks": [{ "url": "heroku/nodejs" }],
+  "keywords": [
+    "node",
+    "telegram",
+    "bot",
+    "telegraf"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
   "env": {
     "BOT_TOKEN": {
       "description": "Get this from the botfather on telegram",
@@ -14,6 +23,11 @@
     "SECRET_PATH": {
       "description": "Some kind of random string",
       "generator": "secret",
+      "required": true
+    },
+    "BOT_NAME": {
+      "description": "The username of your bot on telegram",
+      "value": "bot_username_here",
       "required": true
     }
   }

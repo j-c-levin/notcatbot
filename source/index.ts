@@ -12,12 +12,13 @@ import { PatResponse } from './pat/index';
 import { PigResponse } from './pig/index';
 import { SlapResponse } from './slap/index';
 import { ShoutResponse } from './shout/index';
+import { JoshieResponse } from './joshie/index';
 dotenv.config();
 
 async function init() {
   // Initialise the bot
   const bot = new telegraf(process.env.BOT_TOKEN);
-  bot.telegram.getMe().then((botInfo) => { bot.options.username = 'testnotcatbot'; });
+  bot.telegram.getMe().then((botInfo) => { bot.options.username = process.env.BOT_NAME; });
   // Start ngrok if not deployed
   const url = (typeof process.env.DEVELOPMENT !== 'undefined') ? await ngrok.connect(80) : process.env.URL;
   // Set up the commands the bot will respond too
@@ -40,6 +41,7 @@ function setupHandlers(bot: any): void {
   PigResponse.setupHandlers(bot);
   SlapResponse.setupHandlers(bot);
   ShoutResponse.setupHandlers(bot);
+  JoshieResponse.setupHandlers(bot);
 }
 
 init();
