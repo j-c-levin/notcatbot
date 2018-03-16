@@ -6,8 +6,8 @@ exports.PatResponse = {
     },
     default: function (ctx) {
         // If there's no @mention, use the sender's username
-        const receiver = typeof ctx.update.message.reply_to_message !== "undefined"
-            ? ctx.update.message.reply_to_message.from.username
+        const receiver = typeof ctx.message.reply_to_message !== "undefined"
+            ? ctx.message.reply_to_message.from.username
             : ctx.from.username;
         const replies = [
             `On the other hand, ${receiver} tried REALLY hard...`,
