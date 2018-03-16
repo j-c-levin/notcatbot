@@ -7,8 +7,8 @@ exports.HugResponse = {
     default: function (ctx) {
         const sender = ctx.from.username;
         // If there's no @mention, use 'themselves'
-        const receiver = typeof ctx.update.message.reply_to_message !== "undefined"
-            ? ctx.update.message.reply_to_message.from.username
+        const receiver = typeof ctx.message.reply_to_message !== "undefined"
+            ? ctx.message.reply_to_message.from.username
             : "themselves";
         // Response array of wholesome phrases
         const replies = [
