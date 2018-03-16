@@ -1,5 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.SlapResponse = {
+    setupHandlers: function (bot) {
+        bot.command("/slap", slap);
+    }
+};
 function slap(ctx) {
     const sender = ctx.from.username;
     const receiver = (typeof ctx.message.reply_to_message !== 'undefined') ? ctx.message.reply_to_message.from.username : 'themselves';
@@ -25,9 +30,4 @@ function slap(ctx) {
     const index = Math.floor(Math.random() * replies.length);
     ctx.reply(replies[index]);
 }
-exports.SlapResponse = {
-    setupHandlers: function (bot) {
-        bot.command("/slap", slap);
-    }
-};
 //# sourceMappingURL=index.js.map

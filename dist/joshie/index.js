@@ -1,5 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.JoshieResponse = {
+    setupHandlers: function (bot) {
+        bot.hears(/^.*joshie.*$/, joshie);
+    }
+};
 function joshie(ctx) {
     const stickerReplies = [
         "CAADBAADKQEAAiM7SQa38PU3CuGNUgI",
@@ -40,9 +45,4 @@ function joshie(ctx) {
     ctx.reply(textReplies[textIndex]);
     ctx.replyWithSticker(stickerReplies[stickerIndex]);
 }
-exports.JoshieResponse = {
-    setupHandlers: function (bot) {
-        bot.hears(/^.*joshie.*$/, joshie);
-    }
-};
 //# sourceMappingURL=index.js.map

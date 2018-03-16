@@ -1,3 +1,9 @@
+export const ShrugResponse = {
+  setupHandlers: function (bot: any) {
+    bot.hears("/shrug", shrug);
+  }
+};
+
 function shrug(ctx: any): void {
   const sender: string = ctx.from.username;
   const receiver: string = (typeof ctx.update.message.reply_to_message !== 'undefined') ? ctx.update.message.reply_to_message.from.username : 'themselves';
@@ -12,9 +18,3 @@ function shrug(ctx: any): void {
   const index = Math.floor(Math.random() * replies.length);
   ctx.reply(replies[index]);
 }
-
-export const ShrugResponse = {
-  setupHandlers: function (bot: any) {
-    bot.hears("/shrug", shrug);
-  }
-};

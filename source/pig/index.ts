@@ -1,3 +1,9 @@
+export const PigResponse = {
+  setupHandlers: function (bot: any) {
+    bot.hears("/pig", pig);
+  }
+};
+
 function pig(ctx) {
   const replies = [
     "CAADBAADJgAD_QZlAxapQuDfQRYpAg",
@@ -18,9 +24,3 @@ function pig(ctx) {
   const index = Math.floor(Math.random() * replies.length);
   ctx.replyWithSticker(replies[index]);
 }
-
-export const PigResponse = {
-  setupHandlers: function (bot: any) {
-    bot.hears("/pig", pig);
-  }
-};

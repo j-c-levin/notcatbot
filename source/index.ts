@@ -5,7 +5,7 @@ import { CatResponse } from "./cat";
 import { HelpResponse } from './help';
 import { HugResponse } from './hug';
 import { HoroscopeResponse } from "./horoscope";
-import { LeftChatEventResponse } from "./left_chat_event";
+import { ChatEventResponse } from "./chat_event";
 import { ShrugResponse } from './shrug/index';
 import { FlipResponse } from './flip/index';
 import { PatResponse } from './pat/index';
@@ -34,7 +34,7 @@ function setupHandlers(bot: any): void {
   HelpResponse.setupHandlers(bot);
   HoroscopeResponse.setupHandlers(bot);
   HugResponse.setupHandlers(bot);
-  LeftChatEventResponse.setupHandlers(bot);
+  ChatEventResponse.setupHandlers(bot);
   ShrugResponse.setupHandlers(bot);
   FlipResponse.setupHandlers(bot);
   PatResponse.setupHandlers(bot);

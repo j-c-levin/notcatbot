@@ -1,5 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ShrugResponse = {
+    setupHandlers: function (bot) {
+        bot.hears("/shrug", shrug);
+    }
+};
 function shrug(ctx) {
     const sender = ctx.from.username;
     const receiver = (typeof ctx.update.message.reply_to_message !== 'undefined') ? ctx.update.message.reply_to_message.from.username : 'themselves';
@@ -14,9 +19,4 @@ function shrug(ctx) {
     const index = Math.floor(Math.random() * replies.length);
     ctx.reply(replies[index]);
 }
-exports.ShrugResponse = {
-    setupHandlers: function (bot) {
-        bot.hears("/shrug", shrug);
-    }
-};
 //# sourceMappingURL=index.js.map

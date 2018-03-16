@@ -1,3 +1,9 @@
+export const SlapResponse = {
+  setupHandlers: function (bot: any) {
+    bot.command("/slap", slap);
+  }
+};
+
 function slap(ctx) {
   const sender: string = ctx.from.username;
   const receiver: string = (typeof ctx.message.reply_to_message !== 'undefined') ? ctx.message.reply_to_message.from.username : 'themselves';
@@ -23,9 +29,3 @@ function slap(ctx) {
   const index = Math.floor(Math.random() * replies.length);
   ctx.reply(replies[index]);
 }
-
-export const SlapResponse = {
-  setupHandlers: function (bot: any) {
-    bot.command("/slap", slap);
-  }
-};

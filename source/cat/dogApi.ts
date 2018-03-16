@@ -9,6 +9,6 @@ export function getDogImage(): Promise<string> {
                 reject(err);
             }
             resolve(res.body.message);
-        })
+        });
     });
 }

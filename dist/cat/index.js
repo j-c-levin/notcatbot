@@ -9,6 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const dogApi_1 = require("./dogApi");
+exports.CatResponse = {
+    setupHandlers: function (bot) {
+        bot.hears("/cat", cat);
+    }
+};
 function getSarcasticReply() {
     const replies = [
         "No cats today, how about a dog?",
@@ -36,9 +41,4 @@ function cat(ctx) {
         }
     });
 }
-exports.CatResponse = {
-    setupHandlers: function (bot) {
-        bot.hears("/cat", cat);
-    }
-};
 //# sourceMappingURL=index.js.map

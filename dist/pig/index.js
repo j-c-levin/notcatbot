@@ -1,5 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.PigResponse = {
+    setupHandlers: function (bot) {
+        bot.hears("/pig", pig);
+    }
+};
 function pig(ctx) {
     const replies = [
         "CAADBAADJgAD_QZlAxapQuDfQRYpAg",
@@ -20,9 +25,4 @@ function pig(ctx) {
     const index = Math.floor(Math.random() * replies.length);
     ctx.replyWithSticker(replies[index]);
 }
-exports.PigResponse = {
-    setupHandlers: function (bot) {
-        bot.hears("/pig", pig);
-    }
-};
 //# sourceMappingURL=index.js.map
