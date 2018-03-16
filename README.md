@@ -29,7 +29,10 @@ BOT_NAME=[the username of your bot on telegram]
 2) Beging chatting to your chatbot on telegram
 
 ## Testing
-* This is a to-do, come back soon.
+
+Ripe for unit testing
+* set handler functions, use a spy to check that a function is put in.
+    * Could I even mock up the function to check that the right one is put in?  Probably...
 
 ## Additional notes
 

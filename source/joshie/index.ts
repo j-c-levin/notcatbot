@@ -1,3 +1,9 @@
+export const JoshieResponse = {
+    setupHandlers: function (bot: any) {
+        bot.hears(/^.*joshie.*$/, joshie);
+    }
+};
+
 function joshie(ctx: any): void {
     const stickerReplies = [
         "CAADBAADKQEAAiM7SQa38PU3CuGNUgI",
@@ -38,9 +44,3 @@ function joshie(ctx: any): void {
     ctx.reply(textReplies[textIndex]);
     ctx.replyWithSticker(stickerReplies[stickerIndex]);
 }
-
-export const JoshieResponse = {
-    setupHandlers: function (bot: any) {
-        bot.hears(/^.*joshie.*$/, joshie);
-    }
-};

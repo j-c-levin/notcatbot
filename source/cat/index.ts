@@ -1,5 +1,11 @@
 import { getDogImage } from "./dogApi";
 
+export const CatResponse = {
+  setupHandlers: function (bot: any) {
+    bot.hears("/cat", cat);
+  }
+};
+
 function getSarcasticReply(): string {
   const replies = [
     "No cats today, how about a dog?",
@@ -25,9 +31,3 @@ async function cat(ctx) {
     ctx.reply("Couldn't find any cats. *shrug*");
   }
 }
-
-export const CatResponse = {
-  setupHandlers: function(bot: any) {
-    bot.hears("/cat", cat);
-  }
-};
