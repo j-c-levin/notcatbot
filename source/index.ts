@@ -1,24 +1,24 @@
 import * as telegraf from "telegraf";
 import * as ngrok from "ngrok";
 import * as dotenv from "dotenv";
-import { CatResponse } from "./cat";
-import { HelpResponse } from './help';
-import { HugResponse } from './hug';
-import { HoroscopeResponse } from "./horoscope";
-import { ChatEventResponse } from "./chat_event";
-import { ShrugResponse } from './shrug/index';
-import { FlipResponse } from './flip/index';
-import { PatResponse } from './pat/index';
-import { PigResponse } from './pig/index';
-import { SlapResponse } from './slap/index';
-import { ShoutResponse } from './shout/index';
-import { JoshieResponse } from './joshie/index';
+import { CatResponse } from "./handlers/cat";
+import { HelpResponse } from './handlers/help';
+import { HugResponse } from './handlers/hug';
+import { HoroscopeResponse } from "./handlers/horoscope";
+import { ChatEventResponse } from "./handlers/chat_event";
+import { ShrugResponse } from './handlers/shrug';
+import { FlipResponse } from './handlers/flip';
+import { PatResponse } from './handlers/pat';
+import { PigResponse } from './handlers/pig';
+import { SlapResponse } from './handlers/slap';
+import { ShoutResponse } from './handlers/shout';
+import { JoshieResponse } from './handlers/joshie';
 dotenv.config();
 
 async function init() {
   // Initialise the bot
   const bot = new telegraf(process.env.BOT_TOKEN);
-  bot.telegram.getMe().then((botInfo) => { bot.options.username = process.env.BOT_NAME; });
+  bot.telegram.getMe().then(() => { bot.options.username = process.env.BOT_NAME; });
   // Start ngrok if not deployed
   const url = (typeof process.env.DEVELOPMENT !== 'undefined') ? await ngrok.connect(80) : process.env.URL;
   // Set up the commands the bot will respond too

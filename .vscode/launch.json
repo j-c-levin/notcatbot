@@ -5,29 +5,28 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "unit tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+      "stopOnEntry": false,
+      "args": [
+        "--no-timeouts",
+        "--colors",
+        "--recursive",
+        "dist/**/*.test.js"
+      ], //you can specify paths to specific tests here
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": null,
+      "env": {
+        "NODE_ENV": "testing"
+      }
+    },
+    {
       "type": "node",
       "request": "attach",
       "name": "Attach",
       "port": 9229
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Launch via NPM",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "run-script",
-        "debug"
-      ],
-      "port": 9229
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Launch Program",
-      "program": "${workspaceFolder}\\index.js",
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
     }
   ]
 }
