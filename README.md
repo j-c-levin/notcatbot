@@ -30,9 +30,9 @@ BOT_NAME=[the username of your bot on telegram]
 
 ## Testing
 
-Ripe for unit testing
-* set handler functions, use a spy to check that a function is put in.
-    * Could I even mock up the function to check that the right one is put in?  Probably...
+Run `npm test` or use Visual Studio Code to run tests from the debug tab.
+
+Unfortunately I haven't been able to get breakpoints working yet with the tests, which is a shame.
 
 ## Additional notes
 

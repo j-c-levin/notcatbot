@@ -9,18 +9,14 @@
       "type": "node",
       "request": "launch",
       "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
-      "stopOnEntry": false,
+      "protocol": "inspector",
       "args": [
+        "dist/**/*.test.js",
         "--no-timeouts",
         "--colors",
-        "--recursive",
-        "dist/**/*.test.js"
+        "--recursive"
       ], //you can specify paths to specific tests here
-      "cwd": "${workspaceRoot}",
-      "runtimeExecutable": null,
-      "env": {
-        "NODE_ENV": "testing"
-      }
+      "cwd": "${workspaceRoot}"
     },
     {
       "type": "node",
