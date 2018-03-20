@@ -25,4 +25,5 @@ function pig(ctx) {
     const index = Math.floor(Math.random() * replies.length);
     ctx.replyWithSticker(replies[index]);
 }
+exports.pig = pig;
 //# sourceMappingURL=index.js.map

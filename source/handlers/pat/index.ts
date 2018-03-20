@@ -4,7 +4,7 @@ export const PatResponse = {
   }
 };
 
-function pat(ctx) {
+export function pat(ctx) {
   // If there's no @mention, use the sender's username
   const receiver: string =
     typeof ctx.message.reply_to_message !== "undefined"

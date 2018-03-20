@@ -12,7 +12,7 @@ export const ShoutResponse = {
   }
 };
 
-function shout(ctx) {
+export function shout(ctx) {
   const replies: ShoutStyle[] = [capsShout, leftCornerShout, centerRadialShout];
   const index = Math.floor(Math.random() * replies.length);
   const toShout = ctx.message.text.replace("/shout", "");

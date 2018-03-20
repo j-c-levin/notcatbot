@@ -4,7 +4,7 @@ export const JoshieResponse = {
     }
 };
 
-function joshie(ctx: any): void {
+export function joshie(ctx: any): void {
     const stickerReplies = [
         "CAADBAADKQEAAiM7SQa38PU3CuGNUgI",
         "CAADBAADZQEAAiM7SQZEe_B6I4y9RAI",

@@ -4,7 +4,7 @@ export const ShrugResponse = {
   }
 };
 
-function shrug(ctx: any): void {
+export function shrug(ctx: any): void {
   const replies = [
     "¯\\_(ツ)_/¯",
     "¯\\_ಠ_ಠ_/¯",

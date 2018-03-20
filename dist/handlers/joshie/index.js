@@ -47,4 +47,5 @@ function joshie(ctx) {
         ctx.replyWithSticker(stickerReplies[stickerIndex]);
     }, 200);
 }
+exports.joshie = joshie;
 //# sourceMappingURL=index.js.map

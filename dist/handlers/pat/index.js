@@ -27,4 +27,5 @@ function pat(ctx) {
     const index = Math.floor(Math.random() * replies.length);
     ctx.reply(replies[index]);
 }
+exports.pat = pat;
 //# sourceMappingURL=index.js.map

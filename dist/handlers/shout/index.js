@@ -15,4 +15,5 @@ function shout(ctx) {
     const toShout = ctx.message.text.replace("/shout", "");
     replies[index](toShout, ctx);
 }
+exports.shout = shout;
 //# sourceMappingURL=index.js.map

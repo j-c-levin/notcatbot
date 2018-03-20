@@ -4,7 +4,7 @@ export const PigResponse = {
   }
 };
 
-function pig(ctx) {
+export function pig(ctx) {
   const replies = [
     "CAADBAADJgAD_QZlAxapQuDfQRYpAg",
     "CAADBAADLAAD_QZlA_FV-5qsgqP7Ag",
