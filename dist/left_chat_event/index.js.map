@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../source/left_chat_event/index.ts"],"names":[],"mappings":";;AAAa,QAAA,iBAAiB,GAAG;IAC/B,aAAa,EAAE,UAAU,GAAQ;QAC/B,GAAG,CAAC,EAAE,CAAC,kBAAkB,EAAE,aAAa,CAAC,CAAC;IAC5C,CAAC;CACF,CAAC;AAEF,uBAAuB,GAAG;IACxB,GAAG,CAAC,KAAK,CAAC,qBAAqB,CAAC,CAAC;AACnC,CAAC"}

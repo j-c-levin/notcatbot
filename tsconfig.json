@@ -3,6 +3,10 @@
         "target": "es2015",
         "module": "commonjs",
         "sourceMap": true,
-        "outDir": "dist"
+        "outDir": "dist",
+        "watch": true,
+        "strictNullChecks": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true
     }
 }
