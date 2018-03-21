@@ -43,4 +43,5 @@ function cat(ctx) {
         }
     });
 }
+exports.cat = cat;
 //# sourceMappingURL=index.js.map

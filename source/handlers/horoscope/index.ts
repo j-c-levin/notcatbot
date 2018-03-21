@@ -4,7 +4,7 @@ export const HoroscopeResponse = {
   }
 };
 
-function horoscope(ctx) {
+export function horoscope(ctx) {
   const replies = [
     "Today...is not a good day for you to bake, I'd recommend eating pizza instead.",
     "Today...greatest danger could be your stupidity.",

@@ -39,4 +39,5 @@ function hug(ctx) {
     const index = Math.floor(Math.random() * replies.length);
     ctx.reply(replies[index]);
 }
+exports.hug = hug;
 //# sourceMappingURL=index.js.map

@@ -5,7 +5,7 @@ export const HelpResponse = {
   }
 };
 
-function help(ctx) {
+export function help(ctx) {
   const helpText = `
       I'm so very talented, sometimes I even impress myself:
       /cat - might show you a cat photo, don't count on it though.

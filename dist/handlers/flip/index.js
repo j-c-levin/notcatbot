@@ -39,4 +39,5 @@ function flip(ctx) {
     const index = Math.floor(Math.random() * replies.length);
     ctx.reply(replies[index]);
 }
+exports.flip = flip;
 //# sourceMappingURL=index.js.map

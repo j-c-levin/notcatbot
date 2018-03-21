@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive ./dist/**/*.test.js",
+    "test": "mocha --reporter=min --recursive ./dist/**/*.test.js",
     "start": "nodemon --inspect dist/index.js",
     "debug": "node --inspect dist/index.js"
   },

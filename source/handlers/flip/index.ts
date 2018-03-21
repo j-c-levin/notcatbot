@@ -4,7 +4,7 @@ export const FlipResponse = {
   }
 };
 
-function flip(ctx) {
+export function flip(ctx) {
   const replies = [
     "(╯°□°）╯︵ ┻━┻",
     "(ノಠ益ಠ)ノ彡┻━┻",

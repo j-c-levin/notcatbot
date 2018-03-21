@@ -28,4 +28,5 @@ function horoscope(ctx) {
     const index = Math.floor(Math.random() * replies.length);
     ctx.reply(replies[index]);
 }
+exports.horoscope = horoscope;
 //# sourceMappingURL=index.js.map

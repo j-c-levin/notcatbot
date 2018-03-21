@@ -21,7 +21,7 @@ function getSarcasticReply(): string {
   return replies[index];
 }
 
-async function cat(ctx) {
+export async function cat(ctx) {
   try {
     const image = await getDogImage();
     ctx.replyWithPhoto(image);

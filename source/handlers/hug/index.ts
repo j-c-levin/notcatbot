@@ -4,7 +4,7 @@ export const HugResponse = {
   }
 };
 
-function hug(ctx) {
+export function hug(ctx) {
   const sender: string = ctx.from.username;
   // If there's no @mention, use 'themselves'
   const receiver: string =

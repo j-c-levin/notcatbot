@@ -21,4 +21,5 @@ function help(ctx) {
       ****** - ??????`;
     ctx.reply(helpText);
 }
+exports.help = help;
 //# sourceMappingURL=index.js.map

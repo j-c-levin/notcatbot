@@ -34,6 +34,8 @@ Run `npm test` or use Visual Studio Code to run tests from the debug tab.
 
 Unfortunately I haven't been able to get breakpoints working yet with the tests, which is a shame.
 
+Implementing the testing has also revealed to me that some of my functions are not as pure as they could be, this TODO for the future: responses that select one from a list, refactor so that the functions are pure and mocks can be used to check that the inputs and outputs are correct.
+
 ## Additional notes
 
 It may be a good idea to create two bots: one for production and one for development.  That way users of the official bot only see features when they're ready.
