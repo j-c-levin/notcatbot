@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter=min --recursive ./dist/**/*.test.js",
-    "start": "nodemon --inspect dist/index.js",
+    "start": "npm-run-all --sequential compile server",
+    "develop": "npm-run-all --parallel compile-watch server-watch",
+    "compile": ".\\node_modules\\.bin\\tsc.cmd -p .\\tsconfig.json",
+    "compile-watch": ".\\node_modules\\.bin\\tsc.cmd --watch -p .\\tsconfig.json",
+    "server": "node dist/index.js",
+    "server-watch": "nodemon --inspect dist/index.js",
     "debug": "node --inspect dist/index.js"
   },
   "keywords": [],
@@ -21,6 +26,8 @@
     "dotenv": "^5.0.1",
     "mocha": "^5.0.4",
     "ngrok": "^3.0.0",
+    "nodemon": "^1.17.2",
+    "npm-run-all": "^4.1.2",
     "sinon": "^4.4.6",
     "tslint": "^5.9.1",
     "typescript": "^2.7.2"
