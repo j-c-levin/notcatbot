@@ -11,8 +11,6 @@ Making a telegam bot that is definitely not a cat.  This is an april fools in-jo
 2) Navigate to the root directory in a command line (with package.json)
 3) Run `npm install`
 
-# Development
-
 ## Set up environment variables
 1) Create a .env file in the root directory
 2) Populate it with the following fields: 
@@ -24,12 +22,14 @@ SECRET_PATH=[some random string]
 BOT_NAME=[the username of your bot on telegram]
 ```
 
-## Run
+## Quick launch
 1) Run `npm start`
 2) Beging chatting to your chatbot on telegram
 
-## Testing
+# Development
+Run `npm run develop` to set up the server to compile and relaunch itself automatically on any code change
 
+## Testing
 Run `npm test` or use Visual Studio Code to run tests from the debug tab.
 
 Unfortunately I haven't been able to get breakpoints working yet with the tests, which is a shame.
@@ -37,7 +37,6 @@ Unfortunately I haven't been able to get breakpoints working yet with the tests,
 Implementing the testing has also revealed to me that some of my functions are not as pure as they could be, this TODO for the future: responses that select one from a list, refactor so that the functions are pure and mocks can be used to check that the inputs and outputs are correct.
 
 ## Additional notes
-
 It may be a good idea to create two bots: one for production and one for development.  That way users of the official bot only see features when they're ready.
 
 # Deployment
