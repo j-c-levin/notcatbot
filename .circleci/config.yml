@@ -32,6 +32,9 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
+
+      # compile the typescript  
+      - run: npm run compile  
+
       # run tests!
       - run: npm test
