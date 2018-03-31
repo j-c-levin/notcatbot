@@ -33,8 +33,10 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+      - run: npm install -g typescript
+
       # compile the typescript  
-      - run: npm run compile  
+      - run: npm run compile 
 
       # run tests!
       - run: npm test
