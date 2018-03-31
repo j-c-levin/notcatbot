@@ -44,5 +44,5 @@ export function joshie(ctx: any): void {
     ctx.reply(textReplies[textIndex]);
     setTimeout(() => {
         ctx.replyWithSticker(stickerReplies[stickerIndex]);
-    }, 200);
+    }, 500);
 }
