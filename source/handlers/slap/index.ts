@@ -24,7 +24,17 @@ export function slap(ctx) {
     `${sender} mentioned ${receiver} in passing...in their nobel prize acceptance speech`,
     `${sender} send ${receiver} unsolicited images...from r/aww`,
     `${sender} slapped ${receiver} with a direct order...for a cheeky nandos`,
-    `${sender} told ${receiver} the bad news...there was no more hot chocolate`
+    `${sender} told ${receiver} the bad news...there was no more hot chocolate`,
+    `${sender} used secret psychic mind warfare on ${receiver}...to let them know they were thinking about them`,
+    `${sender} used the power of greyskull on ${receiver}...and let them play as He-man`,
+    `${sender} performed a german suplex on ${receiver}...onto a fuzzy bed of fuzziness`,
+    `${sender} slam dunked ${receiver}'s head...with a waterballoon`,
+    `${sender} set a bomb in ${receiver}'s base...and let him defuse it`,
+    `${sender} unleashed the hounds on ${receiver}...and the puppers played with them for hours`,
+    `${sender} sent ${receiver} swimming with the fishes...on an expenses-paid scuba diving trip`,
+    `${sender} engaged ${receiver} in mortal combat...but promised he wouldn't cheese the fireballs`,
+    `${sender} triggered ${receiver}...with the konami code for an extra life`,
+    `${sender} spoiled fullmetal alchmeist for ${receiver}...to save them from the pain of watching the life-action film`
   ];
   const index = Math.floor(Math.random() * replies.length);
   ctx.reply(replies[index]);
