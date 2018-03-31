@@ -1,5 +1,6 @@
 # Generated files
-dist
+# Commented until I can fix typescript compile with circle ci
+# dist
 
 # Logs
 logs
