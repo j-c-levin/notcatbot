@@ -45,7 +45,7 @@ function joshie(ctx) {
     ctx.reply(textReplies[textIndex]);
     setTimeout(() => {
         ctx.replyWithSticker(stickerReplies[stickerIndex]);
-    }, 200);
+    }, 500);
 }
 exports.joshie = joshie;
 //# sourceMappingURL=index.js.map
