@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.HoroscopeResponse = {
     setupHandlers: function (bot) {
         bot.hears("/horoscope", horoscope);
+        bot.hears("/Horoscope", horoscope);
     }
 };
 function horoscope(ctx) {

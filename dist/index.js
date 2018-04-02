@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const telegraf = require("telegraf");
 const ngrok = require("ngrok");
 const dotenv = require("dotenv");
-const cat_1 = require("./handlers/cat");
+const dog_1 = require("./handlers/dog");
 const help_1 = require("./handlers/help");
 const hug_1 = require("./handlers/hug");
 const horoscope_1 = require("./handlers/horoscope");
@@ -20,9 +20,7 @@ const shrug_1 = require("./handlers/shrug");
 const flip_1 = require("./handlers/flip");
 const pat_1 = require("./handlers/pat");
 const pig_1 = require("./handlers/pig");
-const slap_1 = require("./handlers/slap");
-const shout_1 = require("./handlers/shout");
-const joshie_1 = require("./handlers/joshie");
+const funslap_1 = require("./handlers/funslap");
 dotenv.config();
 function init() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -40,7 +38,7 @@ function init() {
     });
 }
 function setupHandlers(bot) {
-    cat_1.CatResponse.setupHandlers(bot);
+    dog_1.DogResponse.setupHandlers(bot);
     help_1.HelpResponse.setupHandlers(bot);
     horoscope_1.HoroscopeResponse.setupHandlers(bot);
     hug_1.HugResponse.setupHandlers(bot);
@@ -49,9 +47,7 @@ function setupHandlers(bot) {
     flip_1.FlipResponse.setupHandlers(bot);
     pat_1.PatResponse.setupHandlers(bot);
     pig_1.PigResponse.setupHandlers(bot);
-    slap_1.SlapResponse.setupHandlers(bot);
-    shout_1.ShoutResponse.setupHandlers(bot);
-    joshie_1.JoshieResponse.setupHandlers(bot);
+    funslap_1.FunSlapResponse.setupHandlers(bot);
 }
 init();
 //# sourceMappingURL=index.js.map

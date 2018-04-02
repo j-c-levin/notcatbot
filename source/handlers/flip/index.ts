@@ -1,6 +1,7 @@
 export const FlipResponse = {
   setupHandlers: function (bot: any) {
     bot.hears("/flip", flip);
+    bot.hears("/Flip", flip);
   }
 };
 

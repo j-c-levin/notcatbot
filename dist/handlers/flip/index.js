@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FlipResponse = {
     setupHandlers: function (bot) {
         bot.hears("/flip", flip);
+        bot.hears("/Flip", flip);
     }
 };
 function flip(ctx) {

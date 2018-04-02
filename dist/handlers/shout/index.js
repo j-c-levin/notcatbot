@@ -7,6 +7,7 @@ exports.gridSize = 8;
 exports.ShoutResponse = {
     setupHandlers: function (bot) {
         bot.command("/shout", shout);
+        bot.command("/Shout", shout);
     }
 };
 function shout(ctx) {

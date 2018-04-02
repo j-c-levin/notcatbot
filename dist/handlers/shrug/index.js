@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ShrugResponse = {
     setupHandlers: function (bot) {
         bot.hears("/shrug", shrug);
+        bot.hears("/Shrug", shrug);
     }
 };
 function shrug(ctx) {

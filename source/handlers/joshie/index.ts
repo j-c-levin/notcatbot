@@ -1,6 +1,6 @@
 export const JoshieResponse = {
     setupHandlers: function (bot: any) {
-        bot.hears(/^.*joshie.*$/, joshie);
+        bot.hears(/^.*[jJ]oshie.*$/, joshie);
     }
 };
 

@@ -1,6 +1,7 @@
 export const HugResponse = {
   setupHandlers: function (bot: any) {
     bot.hears("/hug", hug);
+    bot.hears("/Hug", hug);
   }
 };
 
@@ -9,7 +10,7 @@ export function hug(ctx) {
   // If there's no @mention, use 'themselves'
   const receiver: string =
     typeof ctx.message.reply_to_message !== "undefined"
-      ? ctx.message.reply_to_message.from.username
+      ? ctx.message.reply_to_message.from.username || ctx.message.reply_to_message.from.first_name
       : "themselves";
   // Response array of wholesome phrases
   const replies = [

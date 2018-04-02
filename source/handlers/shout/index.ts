@@ -9,6 +9,7 @@ export const gridSize = 8;
 export const ShoutResponse = {
   setupHandlers: function (bot: any) {
     bot.command("/shout", shout);
+    bot.command("/Shout", shout);
   }
 };
 
