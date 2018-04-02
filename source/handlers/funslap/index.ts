@@ -7,7 +7,10 @@ export const FunSlapResponse = {
 
 export function funSlap(ctx) {
   const sender: string = ctx.from.username;
-  const receiver: string = (typeof ctx.message.reply_to_message !== 'undefined') ? ctx.message.reply_to_message.from.username : 'themselves';
+  const receiver: string =
+    typeof ctx.message.reply_to_message !== "undefined"
+      ? ctx.message.reply_to_message.from.username || ctx.message.reply_to_message.from.first_name
+      : "themselves";
   const replies = [
     `${sender} crept up from behind and attacked ${receiver}...with a surprise hug`,
     `${sender} made ${receiver} sleep with the fish...in go fish`,
