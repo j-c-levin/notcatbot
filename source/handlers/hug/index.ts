@@ -1,3 +1,5 @@
+import { getReplyUser } from "../../utils";
+
 export const HugResponse = {
   setupHandlers: function (bot: any) {
     bot.hears("/hug", hug);
@@ -7,12 +9,7 @@ export const HugResponse = {
 
 export function hug(ctx) {
   const sender: string = ctx.from.username;
-  // If there's no @mention, use 'themselves'
-  const receiver: string =
-    typeof ctx.message.reply_to_message !== "undefined"
-      ? ctx.message.reply_to_message.from.username || ctx.message.reply_to_message.from.first_name
-      : "themselves";
-  // Response array of wholesome phrases
+  const receiver: string = getReplyUser(ctx);
   const replies = [
     `${sender} felt unexpectedly happy and hi-fived ${receiver}`,
     `On a whim ${sender} gave ${receiver} a great big hug`,

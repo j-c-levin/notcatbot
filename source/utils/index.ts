@@ -34,3 +34,11 @@ export function createCtx(): TestCtx {
         replyWithSticker: spy()
     };
 }
+
+export function getReplyUser(ctx: any): string {
+    const receiver: string =
+    typeof ctx.message.reply_to_message !== "undefined"
+      ? ctx.message.reply_to_message.from.username || ctx.message.reply_to_message.from.first_name
+      : "themselves";
+      return receiver;
+}

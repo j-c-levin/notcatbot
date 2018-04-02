@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const utils_1 = require("../../utils");
 exports.PatResponse = {
     setupHandlers: function (bot) {
         bot.hears("/pat", pat);
@@ -7,10 +8,7 @@ exports.PatResponse = {
     }
 };
 function pat(ctx) {
-    // If there's no @mention, use the sender's username
-    const receiver = typeof ctx.message.reply_to_message !== "undefined"
-        ? ctx.message.reply_to_message.from.username
-        : ctx.from.username;
+    const receiver = utils_1.getReplyUser(ctx);
     const replies = [
         `On the other hand, ${receiver} tried REALLY hard...`,
         `Well, ${receiver} did give it their best`,

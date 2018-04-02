@@ -1,3 +1,5 @@
+import { getReplyUser } from "../../utils";
+
 export const FunSlapResponse = {
   setupHandlers: function (bot: any) {
     bot.command("/funslap", funSlap);
@@ -7,10 +9,7 @@ export const FunSlapResponse = {
 
 export function funSlap(ctx) {
   const sender: string = ctx.from.username;
-  const receiver: string =
-    typeof ctx.message.reply_to_message !== "undefined"
-      ? ctx.message.reply_to_message.from.username || ctx.message.reply_to_message.from.first_name
-      : "themselves";
+  const receiver: string = getReplyUser(ctx);
   const replies = [
     `${sender} crept up from behind and attacked ${receiver}...with a surprise hug`,
     `${sender} made ${receiver} sleep with the fish...in go fish`,

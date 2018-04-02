@@ -20,4 +20,11 @@ function createCtx() {
     };
 }
 exports.createCtx = createCtx;
+function getReplyUser(ctx) {
+    const receiver = typeof ctx.message.reply_to_message !== "undefined"
+        ? ctx.message.reply_to_message.from.username || ctx.message.reply_to_message.from.first_name
+        : "themselves";
+    return receiver;
+}
+exports.getReplyUser = getReplyUser;
 //# sourceMappingURL=index.js.map
