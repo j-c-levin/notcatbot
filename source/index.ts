@@ -1,7 +1,7 @@
 import * as telegraf from "telegraf";
 import * as ngrok from "ngrok";
 import * as dotenv from "dotenv";
-import { CatResponse } from "./handlers/cat";
+import { DogResponse } from "./handlers/dog";
 import { HelpResponse } from './handlers/help';
 import { HugResponse } from './handlers/hug';
 import { HoroscopeResponse } from "./handlers/horoscope";
@@ -10,9 +10,7 @@ import { ShrugResponse } from './handlers/shrug';
 import { FlipResponse } from './handlers/flip';
 import { PatResponse } from './handlers/pat';
 import { PigResponse } from './handlers/pig';
-import { SlapResponse } from './handlers/slap';
-import { ShoutResponse } from './handlers/shout';
-import { JoshieResponse } from './handlers/joshie';
+import { FunSlapResponse } from './handlers/funslap';
 dotenv.config();
 
 async function init() {
@@ -30,7 +28,7 @@ async function init() {
 }
 
 function setupHandlers(bot: any): void {
-  CatResponse.setupHandlers(bot);
+  DogResponse.setupHandlers(bot);
   HelpResponse.setupHandlers(bot);
   HoroscopeResponse.setupHandlers(bot);
   HugResponse.setupHandlers(bot);
@@ -39,9 +37,7 @@ function setupHandlers(bot: any): void {
   FlipResponse.setupHandlers(bot);
   PatResponse.setupHandlers(bot);
   PigResponse.setupHandlers(bot);
-  SlapResponse.setupHandlers(bot);
-  ShoutResponse.setupHandlers(bot);
-  JoshieResponse.setupHandlers(bot);
+  FunSlapResponse.setupHandlers(bot);
 }
 
 init();

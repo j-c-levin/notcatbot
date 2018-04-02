@@ -1,10 +1,11 @@
-export const SlapResponse = {
+export const FunSlapResponse = {
   setupHandlers: function (bot: any) {
-    bot.command("/slap", slap);
+    bot.command("/funslap", funSlap);
+    bot.command("/Funslap", funSlap);
   }
 };
 
-export function slap(ctx) {
+export function funSlap(ctx) {
   const sender: string = ctx.from.username;
   const receiver: string = (typeof ctx.message.reply_to_message !== 'undefined') ? ctx.message.reply_to_message.from.username : 'themselves';
   const replies = [

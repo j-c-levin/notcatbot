@@ -3,13 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.HugResponse = {
     setupHandlers: function (bot) {
         bot.hears("/hug", hug);
+        bot.hears("/Hug", hug);
     }
 };
 function hug(ctx) {
     const sender = ctx.from.username;
     // If there's no @mention, use 'themselves'
     const receiver = typeof ctx.message.reply_to_message !== "undefined"
-        ? ctx.message.reply_to_message.from.username
+        ? ctx.message.reply_to_message.from.username || ctx.message.reply_to_message.from.first_name
         : "themselves";
     // Response array of wholesome phrases
     const replies = [

@@ -1,6 +1,7 @@
 export const PigResponse = {
   setupHandlers: function (bot: any) {
     bot.hears("/pig", pig);
+    bot.hears("/Pig", pig);
   }
 };
 

@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.JoshieResponse = {
     setupHandlers: function (bot) {
-        bot.hears(/^.*joshie.*$/, joshie);
+        bot.hears(/^.*[jJ]oshie.*$/, joshie);
     }
 };
 function joshie(ctx) {

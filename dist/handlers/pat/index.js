@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PatResponse = {
     setupHandlers: function (bot) {
         bot.hears("/pat", pat);
+        bot.hears("/Pat", pat);
     }
 };
 function pat(ctx) {

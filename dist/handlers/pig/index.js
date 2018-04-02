@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PigResponse = {
     setupHandlers: function (bot) {
         bot.hears("/pig", pig);
+        bot.hears("/Pig", pig);
     }
 };
 function pig(ctx) {

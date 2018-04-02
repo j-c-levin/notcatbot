@@ -1,8 +1,9 @@
 import { getDogImage } from "./dogApi";
 
-export const CatResponse = {
+export const DogResponse = {
   setupHandlers: function (bot: any) {
-    bot.hears("/cat", cat);
+    bot.hears("/dog", dog);
+    bot.hears("/Dog", dog);
   }
 };
 
@@ -39,15 +40,11 @@ function getSarcasticReply(): string {
   return replies[index];
 }
 
-export async function cat(ctx) {
+export async function dog(ctx) {
   try {
     const image = await getDogImage();
     ctx.replyWithPhoto(image);
-    setTimeout(() => {
-      ctx.reply(getSarcasticReply());
-    }, 500);
   } catch (e) {
     console.error(`Error getting dog image`);
-    ctx.reply("Couldn't find any cats. *shrug*");
   }
 }
