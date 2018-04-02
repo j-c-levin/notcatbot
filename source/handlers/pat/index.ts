@@ -1,3 +1,5 @@
+import { getReplyUser } from "../../utils";
+
 export const PatResponse = {
   setupHandlers: function (bot: any) {
     bot.hears("/pat", pat);
@@ -6,11 +8,7 @@ export const PatResponse = {
 };
 
 export function pat(ctx) {
-  // If there's no @mention, use the sender's username
-  const receiver: string =
-    typeof ctx.message.reply_to_message !== "undefined"
-      ? ctx.message.reply_to_message.from.username
-      : ctx.from.username;
+  const receiver: string = getReplyUser(ctx);
   const replies = [
     `On the other hand, ${receiver} tried REALLY hard...`,
     `Well, ${receiver} did give it their best`,

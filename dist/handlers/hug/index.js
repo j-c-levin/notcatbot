@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const utils_1 = require("../../utils");
 exports.HugResponse = {
     setupHandlers: function (bot) {
         bot.hears("/hug", hug);
@@ -8,11 +9,7 @@ exports.HugResponse = {
 };
 function hug(ctx) {
     const sender = ctx.from.username;
-    // If there's no @mention, use 'themselves'
-    const receiver = typeof ctx.message.reply_to_message !== "undefined"
-        ? ctx.message.reply_to_message.from.username || ctx.message.reply_to_message.from.first_name
-        : "themselves";
-    // Response array of wholesome phrases
+    const receiver = utils_1.getReplyUser(ctx);
     const replies = [
         `${sender} felt unexpectedly happy and hi-fived ${receiver}`,
         `On a whim ${sender} gave ${receiver} a great big hug`,

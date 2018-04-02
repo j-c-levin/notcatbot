@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const utils_1 = require("../../utils");
 exports.FunSlapResponse = {
     setupHandlers: function (bot) {
         bot.command("/funslap", funSlap);
@@ -8,7 +9,7 @@ exports.FunSlapResponse = {
 };
 function funSlap(ctx) {
     const sender = ctx.from.username;
-    const receiver = (typeof ctx.message.reply_to_message !== 'undefined') ? ctx.message.reply_to_message.from.username : 'themselves';
+    const receiver = utils_1.getReplyUser(ctx);
     const replies = [
         `${sender} crept up from behind and attacked ${receiver}...with a surprise hug`,
         `${sender} made ${receiver} sleep with the fish...in go fish`,
