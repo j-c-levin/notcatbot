@@ -2,8 +2,8 @@ import { getReplyUser } from "../../utils";
 
 export const PatResponse = {
   setupHandlers: function (bot: any) {
-    bot.hears("/pat", pat);
-    bot.hears("/Pat", pat);
+    bot.command("/pat", pat);
+    bot.command("/Pat", pat);
   }
 };
 

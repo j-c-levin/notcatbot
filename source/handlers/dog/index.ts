@@ -2,8 +2,7 @@ import { getDogImage } from "./dogApi";
 
 export const DogResponse = {
   setupHandlers: function (bot: any) {
-    bot.hears("/dog", dog);
-    bot.hears("/Dog", dog);
+    bot.command("/dog", dog);
   }
 };
 

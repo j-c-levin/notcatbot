@@ -4,14 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter=min --recursive ./dist/**/*.test.js",
-    "start": "npm-run-all --sequential compile server",
-    "develop": "npm-run-all --parallel compile-watch server-watch",
-    "compile": ".\\node_modules\\.bin\\tsc.cmd -p .\\tsconfig.json",
-    "compile-watch": ".\\node_modules\\.bin\\tsc.cmd --watch -p .\\tsconfig.json",
-    "server": "node dist/index.js",
-    "server-watch": "nodemon --inspect dist/index.js",
-    "debug": "node --inspect dist/index.js"
+    "heroku-prebuild": "npm install -g ts-node && npm install -g typescript",
+    "test": "mocha --require ts-node/register --reporter=min --recursive ./source/**/*.test.ts",
+    "start": "ts-node source/index.ts",
+    "develop": "nodemon --watch server --exec ts-node source/index.ts --inspect"
   },
   "keywords": [],
   "author": "",
@@ -27,8 +23,8 @@
     "mocha": "^5.0.4",
     "ngrok": "^3.0.0",
     "nodemon": "^1.17.2",
-    "npm-run-all": "^4.1.2",
     "sinon": "^4.4.6",
+    "ts-node": "^5.0.1",
     "tslint": "^5.9.1",
     "typescript": "^2.7.2"
   },
