@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "heroku-prebuild": "npm install -g ts-node && npm install -g typescript",
-    "test": "mocha --reporter=min --recursive ./dist/**/*.test.js",
+    "test": "mocha --require ts-node/register --reporter=min --recursive ./source/**/*.test.ts",
     "start": "ts-node source/index.ts",
     "develop": "nodemon --watch server --exec ts-node source/index.ts --inspect"
   },
