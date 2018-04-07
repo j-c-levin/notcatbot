@@ -1,7 +1,7 @@
 export const ShrugResponse = {
   setupHandlers: function (bot: any) {
-    bot.hears("/shrug", shrug);
-    bot.hears("/Shrug", shrug);
+    bot.command("/shrug", shrug);
+    bot.command("/Shrug", shrug);
   }
 };
 

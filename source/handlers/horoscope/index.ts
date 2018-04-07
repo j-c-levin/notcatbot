@@ -1,7 +1,7 @@
 export const HoroscopeResponse = {
   setupHandlers: function(bot: any) {
-    bot.hears("/horoscope", horoscope);
-    bot.hears("/Horoscope", horoscope);
+    bot.command("/horoscope", horoscope);
+    bot.command("/Horoscope", horoscope);
   }
 };
 

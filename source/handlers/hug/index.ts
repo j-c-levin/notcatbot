@@ -2,8 +2,8 @@ import { getReplyUser } from "../../utils";
 
 export const HugResponse = {
   setupHandlers: function (bot: any) {
-    bot.hears("/hug", hug);
-    bot.hears("/Hug", hug);
+    bot.command("/hug", hug);
+    bot.command("/Hug", hug);
   }
 };
 
