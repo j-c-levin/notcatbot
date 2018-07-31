@@ -1,8 +1,8 @@
 {
   "name": "not-cat-bot",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A telegram bot for the Dollars Telegram channel",
+  "main": "dist/index.js",
   "scripts": {
     "test": "mocha --require ts-node/register --reporter=min --recursive ./source/**/*.test.ts",
     "create": "claudia create --region eu-west-1 --api-module dist/index --timeout 10 --configure-telegram-bot",
