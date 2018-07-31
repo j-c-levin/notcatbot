@@ -14,6 +14,7 @@ function routeCommand(command) {
     }
 }
 function routeEvent(command) {
+    return JSON.stringify(command);
     const request = command.originalRequest;
     // Enter chat event
     if (typeof request.new_chat_participant !== 'undefined') {
