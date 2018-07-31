@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --require ts-node/register --reporter=min --recursive ./source/**/*.test.ts",
-    "create": "claudia create --region eu-west-1 --api-module source/index --timeout 10 --configure-telegram-bot"
+    "create": "claudia create --region eu-west-1 --api-module dist/index --timeout 10 --configure-telegram-bot",
+    "update": "claudia update"
   },
   "keywords": [],
   "author": "",

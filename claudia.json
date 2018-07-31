@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "not-cat-bot-executor",
+    "name": "not-cat-bot",
+    "region": "eu-west-1"
+  },
+  "api": {
+    "id": "7gpsrx0rie",
+    "module": "dist/index"
+  }
+}
