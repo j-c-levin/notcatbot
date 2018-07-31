@@ -1,10 +1,16 @@
 import { getDogImage } from "./dogApi";
+import * as botBuilder from 'claudia-bot-builder';
 
-export const DogResponse = {
-  setupHandlers: function (bot: any) {
-    bot.command("/dog", dog);
+const telegramTemplate = botBuilder.telegramTemplate;
+
+export async function dog(): Promise<any> {
+  try {
+    const image = await getDogImage();
+    return new telegramTemplate.Photo(image).get();
+  } catch (e) {
+    console.error(`Error getting dog image`);
   }
-};
+}
 
 // function getSarcasticReply(): string {
 //   const replies = [
@@ -38,12 +44,3 @@ export const DogResponse = {
 //   const index = Math.floor(Math.random() * replies.length);
 //   return replies[index];
 // }
-
-export async function dog(ctx) {
-  try {
-    const image = await getDogImage();
-    ctx.replyWithPhoto(image);
-  } catch (e) {
-    console.error(`Error getting dog image`);
-  }
-}

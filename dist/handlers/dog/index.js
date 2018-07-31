@@ -9,11 +9,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const dogApi_1 = require("./dogApi");
-exports.DogResponse = {
-    setupHandlers: function (bot) {
-        bot.command("/dog", dog);
-    }
-};
+const botBuilder = require("claudia-bot-builder");
+const telegramTemplate = botBuilder.telegramTemplate;
+function dog() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const image = yield dogApi_1.getDogImage();
+            return new telegramTemplate.Photo(image).get();
+        }
+        catch (e) {
+            console.error(`Error getting dog image`);
+        }
+    });
+}
+exports.dog = dog;
 // function getSarcasticReply(): string {
 //   const replies = [
 //     "No cats today, how about a dog?",
@@ -46,15 +55,3 @@ exports.DogResponse = {
 //   const index = Math.floor(Math.random() * replies.length);
 //   return replies[index];
 // }
-function dog(ctx) {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const image = yield dogApi_1.getDogImage();
-            ctx.replyWithPhoto(image);
-        }
-        catch (e) {
-            console.error(`Error getting dog image`);
-        }
-    });
-}
-exports.dog = dog;
