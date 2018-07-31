@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "heroku-prebuild": "npm install -g ts-node && npm install -g typescript",
     "test": "mocha --require ts-node/register --reporter=min --recursive ./source/**/*.test.ts",
-    "start": "ts-node source/index.ts",
-    "develop": "nodemon --watch server --exec ts-node source/index.ts --inspect"
+    "create": "claudia create --region eu-west-1 --api-module source/index --timeout 10 --configure-telegram-bot"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +27,8 @@
     "typescript": "^2.7.2"
   },
   "dependencies": {
+    "claudia": "^5.1.0",
+    "claudia-bot-builder": "^4.3.0",
     "superagent": "^3.8.2",
     "telegraf": "^3.19.0"
   }
