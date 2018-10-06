@@ -10,14 +10,15 @@ module.exports = botBuilder((message) => {
 }, { platforms: ['telegram'] });
 
 function routeCommand(command): any {
-    switch (command) {
-        case command.match(/^\/dog$/i):
+    // Regex is returning an array of matches, so we want to compare if one is not null
+    switch (true) {
+        case command.match(/^\/dog$/i) !== null:
             return dog();
-        case command.match(/^\/flip$/i):
+        case command.match(/^\/flip$/i) !== null:
             return flip();
-        case command.match(/^\/horoscope$/i):
+        case command.match(/^\/horoscope$/i) !== null:
             return horoscope();
-        case command.match(/^\/shrug$/i):
+        case command.match(/^\/shrug$/i) !== null:
             return shrug();
         default:
         // Do nothing
