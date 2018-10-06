@@ -1,12 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ShrugResponse = {
-    setupHandlers: function (bot) {
-        bot.command("/shrug", shrug);
-        bot.command("/Shrug", shrug);
-    }
-};
-function shrug(ctx) {
+function shrug() {
     const replies = [
         "¯\\_(ツ)_/¯",
         "¯\\_ಠ_ಠ_/¯",
@@ -30,6 +24,6 @@ function shrug(ctx) {
         "╮ (. ❛ ᴗ ❛.) ╭",
     ];
     const index = Math.floor(Math.random() * replies.length);
-    ctx.reply(replies[index]);
+    return replies[index];
 }
 exports.shrug = shrug;

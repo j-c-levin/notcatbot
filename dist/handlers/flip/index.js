@@ -1,12 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FlipResponse = {
-    setupHandlers: function (bot) {
-        bot.command("/flip", flip);
-        bot.command("/Flip", flip);
-    }
-};
-function flip(ctx) {
+function flip() {
     const replies = [
         "(╯°□°）╯︵ ┻━┻",
         "(ノಠ益ಠ)ノ彡┻━┻",
@@ -38,6 +32,6 @@ function flip(ctx) {
         "(╯°□°)╯︵ sɹɐןןop"
     ];
     const index = Math.floor(Math.random() * replies.length);
-    ctx.reply(replies[index]);
+    return replies[index];
 }
 exports.flip = flip;

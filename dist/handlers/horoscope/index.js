@@ -1,12 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HoroscopeResponse = {
-    setupHandlers: function (bot) {
-        bot.command("/horoscope", horoscope);
-        bot.command("/Horoscope", horoscope);
-    }
-};
-function horoscope(ctx) {
+function horoscope() {
     const replies = [
         "Today...is not a good day for you to bake, I'd recommend eating pizza instead.",
         "Today...greatest danger could be your stupidity.",
@@ -28,6 +22,6 @@ function horoscope(ctx) {
         "Today...I have something real important to share- hang on, gotta take a phone call."
     ];
     const index = Math.floor(Math.random() * replies.length);
-    ctx.reply(replies[index]);
+    return replies[index];
 }
 exports.horoscope = horoscope;
