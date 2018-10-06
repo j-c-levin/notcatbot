@@ -1,11 +1,4 @@
-export const FlipResponse = {
-  setupHandlers: function (bot: any) {
-    bot.command("/flip", flip);
-    bot.command("/Flip", flip);
-  }
-};
-
-export function flip(ctx) {
+export function flip() {
   const replies = [
     "(╯°□°）╯︵ ┻━┻",
     "(ノಠ益ಠ)ノ彡┻━┻",
@@ -37,5 +30,5 @@ export function flip(ctx) {
     "(╯°□°)╯︵ sɹɐןןop"
   ];
   const index = Math.floor(Math.random() * replies.length);
-  ctx.reply(replies[index]);
+  return replies[index];
 }

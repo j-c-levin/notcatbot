@@ -1,44 +1,37 @@
-import * as telegraf from "telegraf";
-import * as ngrok from "ngrok";
-import * as dotenv from "dotenv";
-import { DogResponse } from "./handlers/dog";
-import { HelpResponse } from './handlers/help';
-import { HugResponse } from './handlers/hug';
-import { HoroscopeResponse } from "./handlers/horoscope";
-import { ChatEventResponse } from "./handlers/chat_event";
-import { ShrugResponse } from './handlers/shrug';
-import { FlipResponse } from './handlers/flip';
-import { PatResponse } from './handlers/pat';
-import { PigResponse } from './handlers/pig';
-import { FunSlapResponse } from './handlers/funslap';
-dotenv.config();
+import * as botBuilder from 'claudia-bot-builder';
+import { dog } from './handlers/dog';
+import { joinedChatEvent, leftChatEvent } from './handlers/chat_event/index';
+import { flip } from './handlers/flip';
+import { horoscope } from './handlers/horoscope';
+import { shrug } from './handlers/shrug';
 
-async function init() {
-  // Initialise the bot
-  const bot = new telegraf(process.env.BOT_TOKEN);
-  // disable username because it wasn't allowing commands through properly
-  // bot.telegram.getMe().then(() => { bot.options.username = process.env.BOT_NAME; });
-  // Start ngrok if not deployed
-  const url = (typeof process.env.DEVELOPMENT !== 'undefined') ? await ngrok.connect(80) : process.env.URL;
-  // Set up the commands the bot will respond too
-  setupHandlers(bot);
-  // Set up and start the webhook
-  bot.telegram.setWebhook(`${url}/${process.env.SECRET_PATH}`);
-  bot.startWebhook(`/${process.env.SECRET_PATH}`, null, process.env.PORT);
-  console.log("bot running");
+module.exports = botBuilder((message) => {
+    return (message.text !== '') ? routeCommand(message.text) : routeEvent(message.originalRequest);
+}, { platforms: ['telegram'] });
+
+function routeCommand(command): any {
+    switch (command) {
+        case command.match(/^\/dog$/i):
+            return dog();
+        case command.match(/^\/flip$/i):
+            return flip();
+        case command.match(/^\/horoscope$/i):
+            return horoscope();
+        case command.match(/^\/shrug$/i):
+            return shrug();
+        default:
+        // Do nothing
+    }
 }
 
-function setupHandlers(bot: any): void {
-  DogResponse.setupHandlers(bot);
-  HelpResponse.setupHandlers(bot);
-  HoroscopeResponse.setupHandlers(bot);
-  HugResponse.setupHandlers(bot);
-  ChatEventResponse.setupHandlers(bot);
-  ShrugResponse.setupHandlers(bot);
-  FlipResponse.setupHandlers(bot);
-  PatResponse.setupHandlers(bot);
-  PigResponse.setupHandlers(bot);
-  FunSlapResponse.setupHandlers(bot);
-}
+function routeEvent(command): any {
+    const request = command.message;
+    // Enter chat event
+    if (typeof request.new_chat_participant !== 'undefined') {
+        return joinedChatEvent();
+    }
 
-init();
+    if (typeof request.left_chat_participant !== 'undefined') {
+        return leftChatEvent();
+    }
+}

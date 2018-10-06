@@ -1,11 +1,4 @@
-export const ShrugResponse = {
-  setupHandlers: function (bot: any) {
-    bot.command("/shrug", shrug);
-    bot.command("/Shrug", shrug);
-  }
-};
-
-export function shrug(ctx: any): void {
+export function shrug(): string {
   const replies = [
     "¯\\_(ツ)_/¯",
     "¯\\_ಠ_ಠ_/¯",
@@ -29,5 +22,5 @@ export function shrug(ctx: any): void {
     "╮ (. ❛ ᴗ ❛.) ╭",
   ];
   const index = Math.floor(Math.random() * replies.length);
-  ctx.reply(replies[index]);
+  return replies[index];
 }

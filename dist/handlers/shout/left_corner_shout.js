@@ -1,9 +1,10 @@
-import { gridSize } from './index';
-
-export function leftCornerShout(input: string, ctx: any): void {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const index_1 = require("./index");
+function leftCornerShout(input, ctx) {
     let response = '';
     input = input.trim().toUpperCase().replace(" ", "");
-    const length = (gridSize < input.length) ? gridSize : input.length;
+    const length = (index_1.gridSize < input.length) ? index_1.gridSize : input.length;
     // Print horizontally
     response += input.slice(0, length).split("").join(" ");
     // Print diagonally and vertically together
@@ -20,3 +21,4 @@ export function leftCornerShout(input: string, ctx: any): void {
     }
     ctx.replyWithHTML(`<code>${response}</code>`);
 }
+exports.leftCornerShout = leftCornerShout;
