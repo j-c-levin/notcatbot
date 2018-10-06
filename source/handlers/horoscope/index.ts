@@ -1,11 +1,4 @@
-export const HoroscopeResponse = {
-  setupHandlers: function(bot: any) {
-    bot.command("/horoscope", horoscope);
-    bot.command("/Horoscope", horoscope);
-  }
-};
-
-export function horoscope(ctx) {
+export function horoscope() {
   const replies = [
     "Today...is not a good day for you to bake, I'd recommend eating pizza instead.",
     "Today...greatest danger could be your stupidity.",
@@ -27,5 +20,5 @@ export function horoscope(ctx) {
     "Today...I have something real important to share- hang on, gotta take a phone call."
   ];
   const index = Math.floor(Math.random() * replies.length);
-  ctx.reply(replies[index]);
+  return replies[index];
 }

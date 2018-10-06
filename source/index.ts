@@ -1,6 +1,9 @@
 import * as botBuilder from 'claudia-bot-builder';
 import { dog } from './handlers/dog';
 import { joinedChatEvent, leftChatEvent } from './handlers/chat_event/index';
+import { flip } from './handlers/flip';
+import { horoscope } from './handlers/horoscope';
+import { shrug } from './handlers/shrug';
 
 module.exports = botBuilder((message) => {
     return (message.text !== '') ? routeCommand(message.text) : routeEvent(message.originalRequest);
@@ -8,8 +11,14 @@ module.exports = botBuilder((message) => {
 
 function routeCommand(command): any {
     switch (command) {
-        case '/dog':
+        case command.match(/^\/dog$/i):
             return dog();
+        case command.match(/^\/flip$/i):
+            return flip();
+        case command.match(/^\/horoscope$/i):
+            return horoscope();
+        case command.match(/^\/shrug$/i):
+            return shrug();
         default:
         // Do nothing
     }
