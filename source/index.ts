@@ -14,7 +14,7 @@ function routeCommand(command): any {
     switch (true) {
         case command.match(/^\/dog$/i) !== null:
             return dog();
-        case command.match(/^\/flip$/i) !== null:
+        case command.match(/^\/superflip$/i) !== null:
             return flip();
         case command.match(/^\/horoscope$/i) !== null:
             return horoscope();
